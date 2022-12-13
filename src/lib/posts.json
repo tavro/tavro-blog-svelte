@@ -1,25 +1,10 @@
 {
-    "postAmount" : 4,
+    "postAmount" : 1,
     "posts" : {
         "1" : { 
-            "title" : "my first blog post",
-            "date" : "okt 31 18:01",
-            "content" : "test test test test test test test test test test test test test test test"
-        },
-        "2" : { 
-            "title" : "my second blog post",
-            "date" : "okt 31 17:03",
-            "content" : "this is the blog content, but keep in mind that it's only a preview. click the title to get the whole picture"
-        },
-        "3" : { 
-            "title" : "my third blog post",
-            "date" : "okt 31 18:01",
-            "content" : "test test test test test test test test test test test test test test test"
-        },
-        "4" : { 
-            "title" : "my fourth blog post",
-            "date" : "okt 31 17:03",
-            "content" : "this is the blog content, but keep in mind that it's only a preview. click the title to get the whole picture"
+            "title" : "my first blog post!",
+            "date" : "dec 13 12:25",
+            "content" : "i am so happy to announce that i've started this blog and hopefully it will be further developed and turned into something useful. this is really just a way for me to stay motivated while learning svelte, but i will make sure to create posts every now and then!"
         }
     }
 }
