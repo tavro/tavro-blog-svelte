@@ -1,4 +1,6 @@
 <script>
+    import { Router, Route, Link } from "svelte-navigator";
+
     export let title;
     export let date;
     export let content;
@@ -6,9 +8,9 @@
 </script>
 
 <div class="article-preview">
-    <a href="/tavro-blog-svelte/posts/{id}" class="link">
+    <Link to="/posts/{id}">
         <h1 class="article-title">{title}</h1>
-    </a>
+    </Link>
     <hr class="decorator">
     <p class="article-date">{date}</p>
     <p class="article-desc">{content}</p>

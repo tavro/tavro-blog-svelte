@@ -9,15 +9,15 @@
   let test = 1;
 </script>
 
-<Router>
+<Router basepath="/tavro-blog-svelte">
   <main>
     <div class="header">
-      <a href="/"> 
+      <Link to="/tavro-blog-svelte"> 
         <img src="https://github.com/tavro/tavro.github.io/raw/master/public/icon.png" class="tavro-logo" alt="tavro logo" />
-      </a>
+      </Link>
     </div>
 
-    <Route path="tavro-blog-svelte/">
+    <Route path="">
       <h1>tavro-blog</h1>
       <div class="preview">
         <Preview title={blogData.posts[blogData.postAmount - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - (-1 + test)*2].content} id={blogData.postAmount - (-1 + test)*2}/>
@@ -26,16 +26,12 @@
       </div>
     </Route>
 
-    <Route path="tavro-blog-svelte/posts/2">
-      <Article title={blogData.posts[2].title} date={blogData.posts[2].date} content={blogData.posts[2].content}/>
-    </Route>
-
-    <Route path="tavro-blog-svelte/posts/1">
-      <Article title={blogData.posts[1].title} date={blogData.posts[1].date} content={blogData.posts[1].content}/>
+    <Route path="posts/:id" let:params>
+      <Article title={blogData.posts[params.id].title} date={blogData.posts[params.id].date} content={blogData.posts[params.id].content}/>
     </Route>
 
     <div class="footer">
-      <p> check out <a href="https://isakhorvath.me" class="link" target="_blank">isakhorvath.me</a> to get to know me a little better! </p>
+      <p> check out <a href="https://isakhorvath.me" class="link">isakhorvath.me</a> to get to know me a little better! </p>
       <p class="rights"> 2022 © all rights reserved </p>
     </div>
   </main>
@@ -77,5 +73,11 @@
 
   .rights {
     color: #888;
+  }
+
+  @media screen and (max-width: 576px) {
+    .header, .footer {
+        display: none !important;
+    }
   }
 </style>
