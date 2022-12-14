@@ -50,4 +50,10 @@
         margin: auto;
         margin-bottom: 16px;
     }
+
+    @media screen and (max-width: 576px) {
+    .article-preview {
+        width: 100% !important;
+    }
+  }
 </style>
