@@ -12,7 +12,7 @@
 <Router basepath="/tavro-blog-svelte">
   <main>
     <div class="header">
-      <Link to="/tavro-blog-svelte"> 
+      <Link to="/"> 
         <img src="https://github.com/tavro/tavro.github.io/raw/master/public/icon.png" class="tavro-logo" alt="tavro logo" />
       </Link>
     </div>
