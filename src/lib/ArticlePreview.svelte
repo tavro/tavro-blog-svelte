@@ -2,10 +2,11 @@
     export let title;
     export let date;
     export let content;
+    export let id;
 </script>
 
 <div class="article-preview">
-    <a href="#" class="link">
+    <a href="/tavro-blog-svelte/posts/{id}" class="link">
         <h1 class="article-title">{title}</h1>
     </a>
     <hr class="decorator">

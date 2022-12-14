@@ -1,7 +1,12 @@
 {
-    "postAmount" : 1,
+    "postAmount" : 2,
     "posts" : {
         "1" : { 
+            "title" : "testing cors",
+            "date" : "dec 13 10:25",
+            "content" : "requests acting funny..."
+        },
+        "2" : { 
             "title" : "my first blog post!",
             "date" : "dec 13 12:25",
             "content" : "i am so happy to announce that i've started this blog and hopefully it will be further developed and turned into something useful. this is really just a way for me to stay motivated while learning svelte, but i will make sure to create posts every now and then!"

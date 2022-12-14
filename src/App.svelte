@@ -1,33 +1,45 @@
 <script>
+  import { Router, Route, Link } from "svelte-navigator";
+
   import Preview from './lib/ArticlePreview.svelte'
+  import Article from './lib/Article.svelte'
   import PageNav from './lib/Counter.svelte'
   import blogData from './lib/posts.json';
 
   let test = 1;
 </script>
 
-<main>
-  <div>
-    <a href="#" target="_blank"> 
-      <img src="https://github.com/tavro/tavro.github.io/raw/master/public/icon.png" class="tavro-logo" alt="tavro logo" />
-    </a>
-  </div>
-  <h1>tavro-blog</h1>
+<Router>
+  <main>
+    <div class="header">
+      <a href="/"> 
+        <img src="https://github.com/tavro/tavro.github.io/raw/master/public/icon.png" class="tavro-logo" alt="tavro logo" />
+      </a>
+    </div>
 
-  <div class="preview">
-    <Preview title={blogData.posts[blogData.postAmount - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - (-1 + test)*2].content} />
-    <Preview title={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].content} />
-    <PageNav bind:count={test} maxCount={blogData.postAmount / 2} />
-  </div>
+    <Route path="tavro-blog-svelte/">
+      <h1>tavro-blog</h1>
+      <div class="preview">
+        <Preview title={blogData.posts[blogData.postAmount - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - (-1 + test)*2].content} id={blogData.postAmount - (-1 + test)*2}/>
+        <Preview title={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].content} id={blogData.postAmount - 1 - (-1 + test)*2}/>
+        <PageNav bind:count={test} maxCount={blogData.postAmount / 2} />
+      </div>
+    </Route>
 
-  <p>
-    check out <a href="https://isakhorvath.me" class="link" target="_blank">isakhorvath.me</a> to get to know me a little better!
-  </p>
+    <Route path="tavro-blog-svelte/posts/2">
+      <Article title={blogData.posts[2].title} date={blogData.posts[2].date} content={blogData.posts[2].content}/>
+    </Route>
 
-  <p class="rights">
-    2022 © all rights reserved
-  </p>
-</main>
+    <Route path="tavro-blog-svelte/posts/1">
+      <Article title={blogData.posts[1].title} date={blogData.posts[1].date} content={blogData.posts[1].content}/>
+    </Route>
+
+    <div class="footer">
+      <p> check out <a href="https://isakhorvath.me" class="link" target="_blank">isakhorvath.me</a> to get to know me a little better! </p>
+      <p class="rights"> 2022 © all rights reserved </p>
+    </div>
+  </main>
+</Router>
 
 <style>
   .preview {
@@ -45,6 +57,22 @@
 
   .link {
     color: #579e40;
+  }
+
+  .footer {
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: fixed;
+    bottom: 0;
+    background-color: #242424;
+  }
+
+  .header {
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: fixed;
+    top: 48px;
+    background-color: #242424;
   }
 
   .rights {
