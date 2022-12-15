@@ -2,14 +2,16 @@
     "postAmount" : 2,
     "posts" : {
         "1" : { 
-            "title" : "testing cors",
-            "date" : "dec 13 10:25",
-            "content" : "requests acting funny..."
-        },
-        "2" : { 
             "title" : "my first blog post!",
             "date" : "dec 13 12:25",
-            "content" : "i am so happy to announce that i've started this blog and hopefully it will be further developed and turned into something useful. this is really just a way for me to stay motivated while learning svelte, but i will make sure to create posts every now and then!"
+            "content" : "i am so happy to announce that i've started this blog and hopefully it will be further developed and turned into something useful. this is really just a way for me to stay motivated while learning svelte, but i will make sure to create posts every now and then!",
+            "preview" : "i am so happy to announce that i've started this blog and hopefully it will be..."
+        },
+        "2" : { 
+            "title" : "deployment problems with svelte-navigator",
+            "date" : "dec 14 15:58",
+            "content" : "when working with dynamic links in svelte-navigator you cannot construct your paths however you want. instead you use the built in syntax looking something like this <Route path='posts/:id' let:params></Route>. from here on you can use your parameters like a variable. in this case i would like to use the id in the child component of this route. i simply pass it on like this <Component id={params.id}/>. very nice!",
+            "preview" : "when working with dynamic links in svelte-navigator you cannot construct your..."
         }
     }
 }

@@ -20,8 +20,8 @@
     <Route path="">
       <h1>tavro-blog</h1>
       <div class="preview">
-        <Preview title={blogData.posts[blogData.postAmount - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - (-1 + test)*2].content} id={blogData.postAmount - (-1 + test)*2}/>
-        <Preview title={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].content} id={blogData.postAmount - 1 - (-1 + test)*2}/>
+        <Preview title={blogData.posts[blogData.postAmount - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - (-1 + test)*2].preview} id={blogData.postAmount - (-1 + test)*2}/>
+        <Preview title={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].preview} id={blogData.postAmount - 1 - (-1 + test)*2}/>
         <PageNav bind:count={test} maxCount={blogData.postAmount / 2} />
       </div>
     </Route>
@@ -31,7 +31,7 @@
     </Route>
 
     <div class="footer">
-      <p> check out <a href="https://isakhorvath.me" class="link">isakhorvath.me</a> to get to know me a little better! </p>
+      <p class="website"> check out <a href="https://isakhorvath.me" class="link">isakhorvath.me</a> to get to know me a little better! </p>
       <p class="rights"> 2022 © all rights reserved </p>
     </div>
   </main>
@@ -76,8 +76,27 @@
   }
 
   @media screen and (max-width: 576px) {
-    .header, .footer {
+    .header {
+      top: 0px;
+    } 
+    .footer {
         display: none !important;
     }
   }
+
+  @media screen and (max-height: 830px) {
+    .header {
+      top: 0px;
+    }
+    .website {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-height: 800px) {
+    .footer {
+      display: none !important;
+    }
+  }
+
 </style>

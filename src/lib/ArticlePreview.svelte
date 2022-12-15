@@ -46,7 +46,7 @@
     .article-preview {
         border: 1px solid white;
         border-radius: 8px;
-        width: 50%;
+        width: 100%;
         margin: auto;
         margin-bottom: 16px;
     }
