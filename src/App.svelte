@@ -20,14 +20,14 @@
     <Route path="">
       <h1>tavro-blog</h1>
       <div class="preview">
-        <Preview title={blogData.posts[blogData.postAmount - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - (-1 + test)*2].preview} id={blogData.postAmount - (-1 + test)*2}/>
-        <Preview title={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].preview} id={blogData.postAmount - 1 - (-1 + test)*2}/>
+        <Preview category={blogData.posts[blogData.postAmount - (-1 + test)*2].category} title={blogData.posts[blogData.postAmount - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - (-1 + test)*2].preview} id={blogData.postAmount - (-1 + test)*2}/>
+        <Preview category={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].category} title={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].title} date={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].date} content={blogData.posts[blogData.postAmount - 1 - (-1 + test)*2].preview} id={blogData.postAmount - 1 - (-1 + test)*2}/>
         <PageNav bind:count={test} maxCount={blogData.postAmount / 2} />
       </div>
     </Route>
 
     <Route path="posts/:id" let:params>
-      <Article title={blogData.posts[params.id].title} date={blogData.posts[params.id].date} content={blogData.posts[params.id].content} md={blogData.posts[params.id].md}/>
+      <Article tags={blogData.posts[params.id].tags} category={blogData.posts[params.id].category} title={blogData.posts[params.id].title} date={blogData.posts[params.id].date} content={blogData.posts[params.id].content} md={blogData.posts[params.id].md}/>
     </Route>
 
     <div class="footer">

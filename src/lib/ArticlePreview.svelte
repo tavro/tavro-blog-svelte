@@ -3,6 +3,7 @@
 
     export let title;
     export let date;
+    export let category;
     export let content;
     export let id;
 </script>
@@ -12,7 +13,11 @@
         <h1 class="article-title">{title}</h1>
     </Link>
     <hr class="decorator">
-    <p class="article-date">{date}</p>
+    <div style="clear: both;">
+        <p class="article-date">{date}</p>
+        <p class="article-category">{category}</p>
+    </div>
+    <br/>
     <p class="article-desc">{content}</p>
 </div>
 
@@ -33,10 +38,21 @@
     }
 
     .article-date {
+        float: left;
         margin: 0;
         font-style: italic;
-        width: 96px;
         font-size: 12px;
+        text-align: left;
+        padding-left:8px;
+    }
+
+    .article-category {
+        float: right;
+        margin: 0;
+        font-style: italic;
+        font-size: 12px;
+        text-align: right;
+        padding-right: 8px;
     }
 
     .link {

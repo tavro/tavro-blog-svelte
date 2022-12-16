@@ -5,12 +5,18 @@
 
     export let title;
     export let date;
+    export let category;
     export let content;
+    export let tags;
 </script>
 
 <div>
   <h1 class="article-title">{title}</h1>
-  <p class="article-date">{date}</p>
+  <div style="clear: both;">
+    <p class="article-date">{date}</p>
+    <p class="article-category">{category}</p>
+  </div>
+  <br/>
   <hr>
 
   {#if md}
@@ -20,9 +26,24 @@
   {:else}
     <p class="article-content">{content}</p>
   {/if}
+
+  <div class="tag-wrapper">
+    {#each tags as tag}
+        <a href="#" class="tag">{tag}</a>
+    {/each}
+  </div>
 </div>
 
 <style>
+    .tag-wrapper {
+        text-align: left;
+    }
+
+    .tag {
+        margin-right: 8px;
+        font-style: italic;
+    }
+
     .markdown-area {
         text-align:left;
     }
@@ -38,10 +59,19 @@
     }
 
     .article-date {
+        float: left;
         margin: 0;
         font-style: italic;
-        width: 96px;
         font-size: 16px;
+        text-align: left;
+    }
+
+    .article-category {
+        float: right;
+        margin: 0;
+        font-style: italic;
+        font-size: 16px;
+        text-align: right;
     }
 
     .article-preview {
