@@ -14,13 +14,19 @@
   <hr>
 
   {#if md}
-    <SvelteMarkdown source={md}/>
+    <div class="markdown-area">
+        <SvelteMarkdown source={md} />
+    </div>
   {:else}
     <p class="article-content">{content}</p>
   {/if}
 </div>
 
 <style>
+    .markdown-area {
+        text-align:left;
+    }
+
     .article-title {
         padding: 0;
         margin: 16px;
