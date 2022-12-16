@@ -27,7 +27,7 @@
     </Route>
 
     <Route path="posts/:id" let:params>
-      <Article title={blogData.posts[params.id].title} date={blogData.posts[params.id].date} content={blogData.posts[params.id].content}/>
+      <Article title={blogData.posts[params.id].title} date={blogData.posts[params.id].date} content={blogData.posts[params.id].content} md={blogData.posts[params.id].md}/>
     </Route>
 
     <div class="footer">
@@ -68,7 +68,6 @@
     transform: translate(-50%, 0);
     position: fixed;
     top: 48px;
-    background-color: #242424;
   }
 
   .rights {
@@ -84,7 +83,7 @@
     }
   }
 
-  @media screen and (max-height: 830px) {
+  @media screen and (max-height: 800px) {
     .header {
       top: 0px;
     }
@@ -93,7 +92,7 @@
     }
   }
 
-  @media screen and (max-height: 800px) {
+  @media screen and (max-height: 770px) {
     .footer {
       display: none !important;
     }

@@ -1,4 +1,8 @@
 <script>
+    export let md;
+
+    import SvelteMarkdown from 'svelte-markdown';
+
     export let title;
     export let date;
     export let content;
@@ -8,7 +12,12 @@
   <h1 class="article-title">{title}</h1>
   <p class="article-date">{date}</p>
   <hr>
-  <p class="article-content">{content}</p>
+
+  {#if md}
+    <SvelteMarkdown source={md}/>
+  {:else}
+    <p class="article-content">{content}</p>
+  {/if}
 </div>
 
 <style>
